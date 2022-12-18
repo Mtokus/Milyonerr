@@ -5,16 +5,231 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-   
+    <!-- <script src="script.js"></script> -->
 
     <title>Document</title>
   </head>
-  <body>
-    <button class="basla-butonu" onclick="soruGetir(0)">BAŞLA </button>
+  <script>
+    let sorular = [
+           {
+               "soru": "1) “Sinekli Bakkal” Romanının Yazarı Aşağıdakilerden Hangisidir? ",
+               "a_sikki": " Reşat Nuri Güntekin ",
+               "b_sikki": " Halide Edip Adıvar ",
+               "c_sikki": " Ziya Gökalp ",
+               "d_sikki": " Ömer Seyfettin ",
+               "cevap": "B"
+           },
+           {
+               "soru": "2) Aşağıda Verilen İlk Çağ Uygarlıklarından Hangisi Yazıyı İcat Etmiştir? ",
+               "a_sikki": " Hititler ",
+               "b_sikki": " Elamlar ",
+               "c_sikki": " Sümerler ",
+               "d_sikki": " Urartular",
+               "cevap": "C"
+           },
+           {
+               "soru": "3) Tsunami Felaketinde En Fazla Zarar Gören Güney Asya Ülkesi Aşağıdakilerden Hangisidir?",
+               "a_sikki": " Endonezya ",
+               "b_sikki": " Srilanka ",
+               "c_sikki": " Tayland ",
+               "d_sikki": " Hindistan",
+               "cevap": "A"
+           },
+           {
+               "soru": "4) 2003 Yılında Euro Vizyon Şarkı Yarışmasında Ülkemizi Temsil Eden ve Yarışmada Birinci Gelen Sanatçımız Kimdir?",
+               "a_sikki": " Grup Athena ",
+               "b_sikki": " Sertap Erener ",
+               "c_sikki": " Şebnem Paker ",
+               "d_sikki": " Ajda Pekkan",
+               "cevap": "B"
+           },
+           {
+               "soru": "5) Mustafa Kemal Atatürk’ün Nüfusa Kayıtlı Olduğu İl Hangisidir?",
+               "a_sikki": " Bursa ",
+               "b_sikki": " Ankara ",
+               "c_sikki": " İstanbul ",
+               "d_sikki": " Gaziantep",
+               "cevap": "D"
+           },
+           {
+               "soru": "6)Aşağıdakilerden Hangisi Dünya Sağlık Örgütünün Kısaltılmış İsmidir?",
+               "a_sikki": " Uhw ",
+               "b_sikki": " Unıcef ",
+               "c_sikki": " Who ",
+               "d_sikki": " Nato",
+               "cevap": "C"
+           },
+           {
+               "soru": "7)Romen Rakamında Hangi Sayı Yoktur?",
+               "a_sikki": "0",
+               "b_sikki": "50",
+               "c_sikki": "100",
+               "d_sikki": "1000",
+               "cevap": "A"
+           },
+           {
+               "soru": "8)Bir Gün Kaç Saniyedir?",
+               "a_sikki": "86000",
+               "b_sikki": "88600",
+               "c_sikki": "86400",
+               "d_sikki": "84800",
+               "cevap": "C"
+           },
+           {
+               "soru": "9)Üç Büyük Dince Kutsal Sayılan Şehir Hangisidir?",
+               "a_sikki": " Mekke ",
+               "b_sikki": " Kudüs ",
+               "c_sikki": " Roma ",
+               "d_sikki": " İstanbul",
+               "cevap": "B"
+           },
+           {
+               "soru": "10)Hangi İlimizde Demiryolu Yoktur?",
+               "a_sikki": " Batman ",
+               "b_sikki": " Kütahya ",
+               "c_sikki": " Aydın ",
+               "d_sikki": " Muğla",
+               "cevap": "D"
+           },
+           {
+               "soru": "11)Hangi Ülkenin İki Tane Başkenti Vardır?",
+               "a_sikki": "Güney Afrika ",
+               "b_sikki": "Senegal ",
+               "c_sikki": "El Salvador ",
+               "d_sikki": "Venezuela ",
+               "cevap": "A"
+           },
+           {
+               "soru": "12)Cevdet Bey ve Oğulları Eseri Kime Aittir?",
+               "a_sikki": "Orhan Pamuk ",
+               "b_sikki": "Yahya Kemal Bayatlı ",
+               "c_sikki": "Atilla İlhan ",
+               "d_sikki": "Samipaşazade Sezai ",
+               "cevap": "A"
+           },
+           {
+               "soru": "13)Bir Sebepten Dolayı Tek Kulağına Küpe Takan Osmanlı Padişahı Kimdir?",
+               "a_sikki": "Kanuni Sultan Süleyman ",
+               "b_sikki": "Yavuz Sultan Selim ",
+               "c_sikki": "Orhan Bey ",
+               "d_sikki": "Fatih Sultan Selim ",
+               "cevap": "B"
+           },
+           {
+               "soru": "14)Aşağıdaki Ülkelerden Hangisinin Nüfusu Daha Fazladır?",
+               "a_sikki": "İspanya ",
+               "b_sikki": "Fransa ",
+               "c_sikki": "İngiltere ",
+               "d_sikki": "Almanya ",
+               "cevap": "D"
+           },
+           {
+               "soru": "15) Aspirinin Hammaddesi Nedir?",
+               "a_sikki": "Söğüt ",
+               "b_sikki": "Köknar ",
+               "c_sikki": "Kavak ",
+               "d_sikki": "Meşe",
+               "cevap": "A"
+           },
+           {
+               "soru": "16) Labirentin Gölgesinde ve Sembollerin Gölgesinde adlı fantastik romanların yazarı kimdir?",
+               "a_sikki": "Haldun Taner  ",
+               "b_sikki": "Mehmet Rauf  ",
+               "c_sikki": "Yaşar Kemal  ",
+               "d_sikki": "Yahya Karakurt",
+               "cevap": "D"
+           }
+       ];
+
+   </script>
+   <script>
+
+    let sorunun_cevabi ="" ;
+    let puan = 100 ; 
+    let soru_numarasi=0;
+    let second=21;
     
+    
+    setInterval(updateCountDown,1000);
+    function updateCountDown(){
+      if(second>0){
+        let kalan_sure= document.querySelector (".zaman"); 
+        second--;
+        kalan_sure.innerHTML=second
+      }
+      else{
+        
+        alert("süreniz bitti");
+        clearInterval();
+      }}
+    function basDon(){
+      soru_numarasi=0;
+      puan=100;
+      second=21;
+      // document.querySelector(".soru-sayisi").getAttribute("soru-sayisi")=kazanc;
+
+      // alert(kazanc);
+      soruGetir(0);
+      
+    };
+
+function skor (){
+  document.querySelector(".soru-sayisi").innerHTML = puan;
+}
+function soruGetir(s_no) {
+  document.querySelector(".soru-bilgisi").innerHTML=sorular[s_no].soru;
+  document.querySelector(".a-sikki").innerHTML=sorular[s_no].a_sikki;
+  document.querySelector(".b-sikki").innerHTML=sorular[s_no].b_sikki;
+  document.querySelector(".c-sikki").innerHTML=sorular[s_no].c_sikki;
+  document.querySelector(".d-sikki").innerHTML=sorular[s_no].d_sikki;
+  sorunun_cevabi = sorular[s_no].cevap;
+  document.getElementById("basla").style.opacity=0 
+  
+}
+
+function cevaplandi(oyuncu_secim){
+  
+  oyuncu_tik = oyuncu_secim.getAttribute("data-secim");
+  if (sorunun_cevabi== oyuncu_tik) {
+    puan = puan+puan;
+    skor();
+    alert ("doğru");
+    soruIlerlet();
+   }
+    
+  
+  else {
+    alert ("üzgünüz");
+    basDon();
+   
+  }}
+;
+function soruIlerlet (){
+  soru_numarasi++;
+  second=21
+  soruGetir(soru_numarasi);
+}
+
+function yariYariya (){
+  // document.querySelector(".a-sikki").style.opacity=0
+  // document.querySelector(".yari-yariya").setAttribute("yari-yariya","yari-yariya2");
+  document.querySelector(".yari-yariya2").removeEventListener("onclick");
+}
+function telefonla() { 
+  // alert("tıklandı")
+ 
+  document.querySelector(".soru-bilgisi").innerHTML = `En yakın arkadaşını aradın ve sorunun 
+  cevabının ${sorunun_cevabi} olduğunu söyledi.`;
+  document.querySelector(".telefon").removeEventListener('click',telefonla());
+ 
+}
+
+   </script>
+  <body>
+    <button class="basla-butonu" id="basla" onclick="soruGetir(0)">BAŞLA</button>
+
     <div class="header">
-      <div class="soru-sayisi">1.SORU: 100 TL</div>
+      <div class="soru-sayisi" id="y_kazanc">1.SORU: 100 TL</div>
 
       <div class="bilgiler">
         <div class="zaman">20</div>
@@ -22,22 +237,212 @@
           <img src="resimler/logokmo.png" width="250px" height="250px" alt="" />
         </div>
         <div class="jokers">
-          <div class="yari-yariya">1/2</div>
-          <div class="telefon">TELEFON</div>
-          <div class="seyirci">SEYİRCİ</div>
+          <div class="yari-yariya" onclick="yariYariya()">1/2</div>
+          <div class="telefon" onclick="telefonla()">TELEFON</div>
+          <div class="seyirci" onclick="seyirciye()">SEYİRCİ</div>
         </div>
       </div>
       <div class="soru-kutusu">
-        <div class="soru-bilgisi">
-
-        </div>
-        <div class="siklar">
-          <div class="a-sikki"></div>
-          <div class="b-sikki"></div>
-          <div class="c-sikki"></div>
-          <div class="d-sikki"></div>
+        <div class="soru-bilgisi" id="soru-bilgisi"></div>
+        <div class="siklar" id="siklar">
+          <div class="a-sikki" id="a_sikki" data-secim="A" onclick="cevaplandi(this)">a</div>
+          <div class="b-sikki" id="b_sikki" data-secim="B" onclick="cevaplandi(this)">b</div>
+          <div class="c-sikki" id="c_sikki" data-secim="C" onclick="cevaplandi(this)">c</div>
+          <div class="d-sikki" id="d_sikki" data-secim="D" onclick="cevaplandi(this)">d</div>
         </div>
       </div>
     </div>
+    
+   
   </body>
 </html>
+<!-- let sorular = [
+            {
+                "soru": "1) “Sinekli Bakkal” Romanının Yazarı Aşağıdakilerden Hangisidir? ",
+                "a_sikki": " Reşat Nuri Güntekin ",
+                "b_sikki": " Halide Edip Adıvar ",
+                "c_sikki": " Ziya Gökalp ",
+                "d_sikki": " Ömer Seyfettin ",
+                "cevap": "B"
+            },
+            {
+                "soru": "2) Aşağıda Verilen İlk Çağ Uygarlıklarından Hangisi Yazıyı İcat Etmiştir? ",
+                "a_sikki": " Hititler ",
+                "b_sikki": " Elamlar ",
+                "c_sikki": " Sümerler ",
+                "d_sikki": " Urartular",
+                "cevap": "C"
+            },
+            {
+                "soru": "3) Tsunami Felaketinde En Fazla Zarar Gören Güney Asya Ülkesi Aşağıdakilerden Hangisidir?",
+                "a_sikki": " Endonezya ",
+                "b_sikki": " Srilanka ",
+                "c_sikki": " Tayland ",
+                "d_sikki": " Hindistan",
+                "cevap": "A"
+            },
+            {
+                "soru": "4) 2003 Yılında Euro Vizyon Şarkı Yarışmasında Ülkemizi Temsil Eden ve Yarışmada Birinci Gelen Sanatçımız Kimdir?",
+                "a_sikki": " Grup Athena ",
+                "b_sikki": " Sertap Erener ",
+                "c_sikki": " Şebnem Paker ",
+                "d_sikki": " Ajda Pekkan",
+                "cevap": "B"
+            },
+            {
+                "soru": "5) Mustafa Kemal Atatürk’ün Nüfusa Kayıtlı Olduğu İl Hangisidir?",
+                "a_sikki": " Bursa ",
+                "b_sikki": " Ankara ",
+                "c_sikki": " İstanbul ",
+                "d_sikki": " Gaziantep",
+                "cevap": "D"
+            },
+            {
+                "soru": "6)Aşağıdakilerden Hangisi Dünya Sağlık Örgütünün Kısaltılmış İsmidir?",
+                "a_sikki": " Uhw ",
+                "b_sikki": " Unıcef ",
+                "c_sikki": " Who ",
+                "d_sikki": " Nato",
+                "cevap": "C"
+            },
+            {
+                "soru": "7)Romen Rakamında Hangi Sayı Yoktur?",
+                "a_sikki": "0",
+                "b_sikki": "50",
+                "c_sikki": "100",
+                "d_sikki": "1000",
+                "cevap": "A"
+            },
+            {
+                "soru": "8)Bir Gün Kaç Saniyedir?",
+                "a_sikki": "86000",
+                "b_sikki": "88600",
+                "c_sikki": "86400",
+                "d_sikki": "84800",
+                "cevap": "C"
+            },
+            {
+                "soru": "9)Üç Büyük Dince Kutsal Sayılan Şehir Hangisidir?",
+                "a_sikki": " Mekke ",
+                "b_sikki": " Kudüs ",
+                "c_sikki": " Roma ",
+                "d_sikki": " İstanbul",
+                "cevap": "B"
+            },
+            {
+                "soru": "10)Hangi İlimizde Demiryolu Yoktur?",
+                "a_sikki": " Batman ",
+                "b_sikki": " Kütahya ",
+                "c_sikki": " Aydın ",
+                "d_sikki": " Muğla",
+                "cevap": "D"
+            },
+            {
+                "soru": "11)Hangi Ülkenin İki Tane Başkenti Vardır?",
+                "a_sikki": "Güney Afrika ",
+                "b_sikki": "Senegal ",
+                "c_sikki": "El Salvador ",
+                "d_sikki": "Venezuela ",
+                "cevap": "A"
+            },
+            {
+                "soru": "12)Cevdet Bey ve Oğulları Eseri Kime Aittir?",
+                "a_sikki": "Orhan Pamuk ",
+                "b_sikki": "Yahya Kemal Bayatlı ",
+                "c_sikki": "Atilla İlhan ",
+                "d_sikki": "Samipaşazade Sezai ",
+                "cevap": "A"
+            },
+            {
+                "soru": "13)Bir Sebepten Dolayı Tek Kulağına Küpe Takan Osmanlı Padişahı Kimdir?",
+                "a_sikki": "Kanuni Sultan Süleyman ",
+                "b_sikki": "Yavuz Sultan Selim ",
+                "c_sikki": "Orhan Bey ",
+                "d_sikki": "Fatih Sultan Selim ",
+                "cevap": "B"
+            },
+            {
+                "soru": "14)Aşağıdaki Ülkelerden Hangisinin Nüfusu Daha Fazladır?",
+                "a_sikki": "İspanya ",
+                "b_sikki": "Fransa ",
+                "c_sikki": "İngiltere ",
+                "d_sikki": "Almanya ",
+                "cevap": "D"
+            },
+            {
+                "soru": "15) Aspirinin Hammaddesi Nedir?",
+                "a_sikki": "Söğüt ",
+                "b_sikki": "Köknar ",
+                "c_sikki": "Kavak ",
+                "d_sikki": "Meşe",
+                "cevap": "A"
+            },
+            {
+                "soru": "16) Labirentin Gölgesinde ve Sembollerin Gölgesinde adlı fantastik romanların yazarı kimdir?",
+                "a_sikki": "Haldun Taner  ",
+                "b_sikki": "Mehmet Rauf  ",
+                "c_sikki": "Yaşar Kemal  ",
+                "d_sikki": "Yahya Karakurt",
+                "cevap": "D"
+            }
+        ]; -->
+
+
+
+
+        <!-- function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
+          this.soruMetni = soruMetni;
+          this.cevapSecenekleri = cevapSecenekleri;
+          this.dogruCevap = dogruCevap;
+        }
+        Soru.prototype.cevabiKontrolEt = function (cevap) {
+          return cevap === this.dogruCevap;
+        };
+  
+        let sorular = [
+          new Soru(
+            "1 “Sinekli Bakkal” Romanının Yazarı Aşağıdakilerden Hangisidir? ",
+            {
+              a_sikki: " Reşat Nuri Güntekin ",
+              b_sikki: " Halide Edip Adıvar ",
+              c_sikki: " Ziya Gökalp ",
+              d_sikki: " Ömer Seyfettin ",
+            },
+            "b"
+          ),
+          new Soru(
+            " 2-Aşağıda Verilen İlk Çağ Uygarlıklarından Hangisi Yazıyı İcat Etmiştir?",
+            {
+              a_sikki: " Hititler ",
+              b_sikki: " Elamlar ",
+              c_sikki: " Sümerler ",
+              d_sikki: " Urartular",
+            },
+            "c"
+          ),
+        ];
+  
+        function Milyoner(sorular) {
+          this.sorular = sorular;
+          this.soruIndex = 0;
+        }
+        Milyoner.prototype.soruGetir = function () {
+          return this.sorular[this.soruIndex];
+        };
+        const milyoner = new Milyoner(sorular);
+  
+        document
+          .querySelector(".basla-butonu")
+          .addEventListener("click", function () {
+            if (milyoner.sorular.length != milyoner.soruIndex) {
+              
+              let soru =milyoner.soruGetir();
+              milyoner.soruIndex += 1;
+            } else {
+              console.log("soru bitti");
+            }
+          });
+  
+          function soruGoster (soru) {
+            let 
+          } -->

@@ -1,16 +1,17 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     color: white;
-    
+
 }
 
 
 
 
-body{
+body {
     background-image: url(resimler/milyoner3.jpg);
     background-size: cover;
+    background-size: 100%;
     background-color: black;
     display: flex;
     align-items: center;
@@ -18,18 +19,19 @@ body{
 }
 
 
-.header{
+.header {
 
     margin: auto;
     margin-top: 70px;
     width: 50%;
     height: 100%;
- 
-    
+
+
 }
+
 .soru-sayisi {
-    
-   margin-bottom: 10px;
+
+    margin-bottom: 10px;
     height: 40px;
     display: flex;
     text-align: center;
@@ -39,61 +41,69 @@ body{
     border-radius: 15px;
     border: 3px solid #7E5BB2;
 }
-.bilgiler{
+
+.bilgiler {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.zaman{
+
+.zaman {
     height: 60px;
-    width:60px;
+    width: 60px;
     font-size: 1.6em;
     margin-right: 10px;
     border-radius: 40px 40px 40px 40px;
     background-color: black;
- 
+
     display: flex;
     align-items: center;
     justify-content: center;
     border: 3px solid #7E5BB2;
 }
-.jokers{
-    
+
+.jokers {
+
     height: 150px;
     display: flex;
     flex-direction: column;
-    justify-content:space-around
-    
+    justify-content: space-around
 }
-.yari-yariya,.telefon, .seyirci{
+
+.yari-yariya,
+.telefon,
+.seyirci {
     background-color: black;
-    margin:7px;
+    margin: 7px;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
     border: 3px solid #7E5BB2;
     border-radius: 15px;
 }
-.soru-kutusu{
+
+.soru-kutusu {
     text-align: center;
-    
-    
+
+
 }
-.soru-bilgisi{
- display: flex;
- justify-content: center;
- align-items: center;
- background-color: black;
-height: 60px;
-margin: 5px;
-padding: 10px;
-border-radius: 20px;
-border: 3px solid #7E5BB2;
+
+.soru-bilgisi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 60px;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid #7E5BB2;
 }
-.soru-kutusu .siklar{
+
+.soru-kutusu .siklar {
     text-align: center;
 
     display: grid;
@@ -104,19 +114,26 @@ border: 3px solid #7E5BB2;
     border-radius: 20px;
     font-size: 1.1em;
     line-height: 1.1em;
+
 }
-.siklar .a-sikki, .b-sikki, .c-sikki, .d-sikki{
-    background-color:black;
+
+.siklar .a-sikki,
+.b-sikki,
+.c-sikki,
+.d-sikki {
+    background-color: black;
     height: 55px;
     padding-top: 10px;
     padding-left: 15px;
     margin: 5px;
     border-radius: 20px;
     border: 3px solid #7E5BB2;
-    
-   display: flex;
-   float: left;
+
+    display: flex;
+    float: left;
+
 }
+
 .basla-butonu {
     width: 15%;
     height: 10%;
@@ -126,12 +143,44 @@ border: 3px solid #7E5BB2;
     border-radius: 50px;
     border: 3px solid #7E5BB2;
     position: absolute;
-    top: 40%;
-    left: 40%;
+    margin: auto;
+}
 
+.a-sikki:hover {
+    background-color: #FAA524;
+    cursor: pointer;
+}
+
+.b-sikki:hover {
+    background-color: #FAA524;
+    cursor: pointer;
+}
+
+.c-sikki:hover {
+    background-color: #FAA524;
+    cursor: pointer;
+}
+
+.d-sikki:hover {
+    background-color: #FAA524;
+    cursor: pointer;
 }
 
 .basla-butonu:hover {
     background-color: antiquewhite;
     color: #406882;
 }
+
+/* .sonraki-soru {
+    width: 15%;
+    height: 10%;
+    background-color: black;
+
+    
+    border-radius: 50px;
+    border: 3px solid #7E5BB2;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    gri
+  } */
